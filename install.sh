@@ -165,11 +165,6 @@ GROUP_CHMOD="g+rwx"
 if [[ -n "${HOMEBREW_ON_MACOS-}" ]]
 then
   UNAME_MACHINE="$(/usr/bin/uname -m)"
-
-  # On macOS, support Apple Silicon only
-  if [[ "${UNAME_MACHINE}" != "arm64" ]]
-  then
-    abort "Homebrew on macOS is only supported on Apple Silicon processors!"
   fi
 
   HOMEBREW_PREFIX_DEFAULT="/opt/homebrew"
